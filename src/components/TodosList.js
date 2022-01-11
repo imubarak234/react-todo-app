@@ -9,7 +9,11 @@ class TodosList extends React.Component {
     return (
       <ul>
         {mike.todos.map((todo) => (
-          <TodoItems key={todo.id} todo={todo} />
+          <TodoItems
+            key={todo.id}
+            todo={todo}
+            handleChangesProps={mike.handleChangesProps}
+          />
         ))}
       </ul>
     );
@@ -24,6 +28,7 @@ TodosList.propTypes = {
       completed: PropTypes.bool,
     }),
   ).isRequired,
+  handleChangesProps: PropTypes.func.isRequired,
 };
 
 export default TodosList;
