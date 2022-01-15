@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import TodosList from './TodosList';
 import Header from './Header';
@@ -27,12 +28,16 @@ class TodoContainer extends React.Component {
     };
   }
 
+  handleChange = () => {
+    console.log('clicked');
+  }
+
   render() {
     const mike = this.state;
     return (
       <div>
         <Header />
-        <TodosList todos={mike.todos} />
+        <TodosList todos={mike.todos} handleChangesProps={this.handleChange} />
       </div>
     );
   }
